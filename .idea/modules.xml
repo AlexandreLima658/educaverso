@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course-service/api/educaverso.course-service.api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/course-service/api/educaverso.course-service.api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course-service/api/educaverso.course-service.api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/course-service/api/educaverso.course-service.api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course-service/application/educaverso.course-service.application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/course-service/application/educaverso.course-service.application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course-service/application/educaverso.course-service.application.test.iml" filepath="$PROJECT_DIR$/.idea/modules/course-service/application/educaverso.course-service.application.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course-service/core/educaverso.course-service.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/course-service/core/educaverso.course-service.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course-service/core/educaverso.course-service.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/course-service/core/educaverso.course-service.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course-service/infrastructure/educaverso.course-service.infrastructure.main.iml" filepath="$PROJECT_DIR$/.idea/modules/course-service/infrastructure/educaverso.course-service.infrastructure.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/course-service/infrastructure/educaverso.course-service.infrastructure.test.iml" filepath="$PROJECT_DIR$/.idea/modules/course-service/infrastructure/educaverso.course-service.infrastructure.test.iml" />
+    </modules>
+  </component>
+</project>

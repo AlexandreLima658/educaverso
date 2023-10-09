@@ -1,0 +1,19 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.9.10'
+}
+
+dependencies {
+    implementation project(':commons')
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.10")
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(20)
+    }
+}
+

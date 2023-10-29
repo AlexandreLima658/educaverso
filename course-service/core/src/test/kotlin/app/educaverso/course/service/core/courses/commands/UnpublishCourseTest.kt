@@ -2,12 +2,11 @@ package app.educaverso.course.service.core.courses.commands
 
 import app.educaverso.commons.domain.entities.BaseEntity
 import org.junit.Test
-import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 
-class UpdateCourseTest {
-
+class UnpublishCourseTest {
     @Test
-    fun `should update a course`() {
+    fun `should unpublish a course`() {
 
         // Given
         var course = BaseEntity.execute(
@@ -17,15 +16,10 @@ class UpdateCourseTest {
         )
 
         // When
-        var updateCourseCommand = UpdateCourse(
-            newName = "New course name"
-        )
-        course.execute(updateCourseCommand)
+        course.execute(UnpublishCourse())
 
         // Then
-        assertEquals(course.name.value, updateCourseCommand.newName)
+        assertFalse(course.published)
 
     }
-
-
 }

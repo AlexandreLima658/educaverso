@@ -1,13 +1,13 @@
 package app.educaverso.commons.domain.entities
 
 import app.educaverso.commons.domain.commands.ActionCommand
-import app.educaverso.commons.domain.commands.CreateCommand
+import app.educaverso.commons.domain.commands.FactoryMethodCommand
 import app.educaverso.commons.domain.value.objects.BaseId
 
 abstract class BaseEntity<Id : BaseId<*>>(val id: Id) {
 
     companion object {
-        fun <T> execute(command: CreateCommand<T>): T where T : BaseEntity<*> {
+        fun <T> execute(command: FactoryMethodCommand<T>): T where T : BaseEntity<*> {
             return command.execute()
         }
     }

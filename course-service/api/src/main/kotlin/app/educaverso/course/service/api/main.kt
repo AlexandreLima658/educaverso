@@ -1,5 +1,5 @@
 package app.educaverso.course.service.api
 
-fun main() {
-    println("Hello World!")
-}
+import io.ktor.server.netty.EngineMain.main
+
+fun main(args: Array<String>): Unit = main(args)

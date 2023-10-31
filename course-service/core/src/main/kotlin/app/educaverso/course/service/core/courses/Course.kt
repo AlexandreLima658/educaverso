@@ -5,7 +5,7 @@ import app.educaverso.commons.domain.value.objects.CourseId
 import app.educaverso.course.service.core.courses.value.objects.CourseName
 
 class Course(
-    id: CourseId,
+    id: CourseId = CourseId.generate(),
     var name: CourseName,
     var published: Boolean
 ) : AggregateRoot<CourseId>(id)

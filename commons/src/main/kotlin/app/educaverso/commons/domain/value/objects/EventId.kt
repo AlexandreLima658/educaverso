@@ -1,6 +1,6 @@
 package app.educaverso.commons.domain.value.objects
 
-import java.util.UUID
+import java.util.*
 
 class EventId(value: UUID) : BaseId<UUID>(value) {
     companion object {

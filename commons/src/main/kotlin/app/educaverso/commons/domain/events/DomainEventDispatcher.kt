@@ -36,5 +36,5 @@ object DomainEventDispatcher : EventDispatcher {
         this.handlers.clear()
     }
 
-    override fun handlers() =this.handlers.toMap()
+    override fun handlers() = this.handlers.toMap()
 }

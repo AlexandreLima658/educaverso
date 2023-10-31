@@ -1,6 +1,36 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.9.10'
+    id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+    id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlinVersion"
+    id "io.ktor.plugin" version "$ktorVersion"
+
     id 'application'
+}
+
+dependencies {
+
+    // Project
+    implementation project(":commons")
+    implementation project(":course-service:core")
+    implementation project(":course-service:application")
+    implementation project(":course-service:infrastructure")
+
+    // Ktor
+    implementation("io.ktor:ktor-server-core:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
+    implementation("io.ktor:ktor-server-compression:$ktorVersion")
+    implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+
+    implementation("io.ktor:ktor-serialization-gson:$ktorVersion")
+    testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
+
+    // Koin
+    implementation("io.insert-koin:koin-ktor:$koinVersion")
+
+    // Logback
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
+
+    // JUnit
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }
 
 repositories {

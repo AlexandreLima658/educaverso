@@ -12,7 +12,7 @@ dependencies {
     implementation project(":commons")
     implementation project(":course-service:core")
     implementation project(":course-service:application")
-    implementation project(":course-service:infrastructure")
+    implementation project(":course-service:infrastructure:mongodb-repository")
 
     // Ktor
     implementation("io.ktor:ktor-server-core:$ktorVersion")

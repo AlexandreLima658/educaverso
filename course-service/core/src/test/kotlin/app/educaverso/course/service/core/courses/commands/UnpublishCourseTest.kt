@@ -11,7 +11,7 @@ class UnpublishCourseTest {
         // Given
         var course = BaseEntity.execute(
             CreateCourse(
-                aName = "Course name"
+                name = "Course name"
             )
         )
 

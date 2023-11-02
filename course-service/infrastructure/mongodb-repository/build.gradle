@@ -1,0 +1,18 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+}
+
+dependencies {
+    implementation project(':commons')
+    implementation project(':course-service:core')
+
+
+    implementation("org.mongodb:mongodb-driver-kotlin-coroutine:$mongodbVersion")
+
+
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
+}
+
+repositories {
+    mavenCentral()
+}

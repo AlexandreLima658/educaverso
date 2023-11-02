@@ -3,5 +3,5 @@ rootProject.name = "educaverso"
 include("commons")
 include("course-service:core")
 include("course-service:application")
-include("course-service:infrastructure")
+include("course-service:infrastructure:mongodb-repository")
 include("course-service:api")

@@ -11,7 +11,7 @@ class CreateCourseTest {
     fun `should create a new course`() {
         // Given
         var createCourse = CreateCourse(
-            aName = "Course name"
+            name = "Course name"
         )
 
         // When
@@ -19,7 +19,7 @@ class CreateCourseTest {
 
         // Then
         assertNotNull(aCourse.id)
-        assertEquals(aCourse.name.value, createCourse.aName)
+        assertEquals(aCourse.name.value, createCourse.name)
     }
 
 }

@@ -6,8 +6,8 @@ import app.educaverso.course.service.core.courses.Course
 
 class PublishCourse : ActionCommand<Course>, EventCommand {
 
-    override fun execute(course: Course) {
-        course.published = true
+    override fun execute(entity: Course) {
+        entity.published = true
     }
 
 }

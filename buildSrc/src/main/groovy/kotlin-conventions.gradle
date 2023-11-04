@@ -1,3 +1,7 @@
+plugins {
+    id("jacoco")
+}
+
 version = "1.0.0"
 
 repositories {
@@ -15,4 +19,8 @@ dependencies {
 
     // Mockito
     testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
+}
+
+jacoco {
+    toolVersion = "0.8.11"
 }

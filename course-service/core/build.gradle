@@ -8,18 +8,3 @@ group 'app.educaverso.course.service.core'
 dependencies {
     implementation project(':commons')
 }
-//
-//configurations {
-//    testClasses {
-//        extendsFrom testImplementation
-//    }
-//}
-//
-//task testJar(type: Jar) {
-//    from sourceSets.test.output
-//    archiveClassifier.set('test')
-//}
-//
-//artifacts {
-//    testClasses testJar
-//}

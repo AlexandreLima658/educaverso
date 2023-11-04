@@ -4,6 +4,8 @@ plugins {
 
     id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlinVersion"
     id "io.ktor.plugin" version "$ktorVersion"
+
+    id 'jacoco-report-aggregation'
 }
 
 group 'app.educaverso.course.service.api'
@@ -31,4 +33,29 @@ dependencies {
 
 application {
     mainClass.set("app.educaverso.course.service.api.MainKt")
+}
+
+ktor {
+    fatJar {
+        archiveFileName.set("$rootDir/build/libs/${project.name}-fat.jar")
+    }
+}
+
+testCodeCoverageReport {
+    reports {
+
+        xml {
+            enabled true
+            destination file("$rootDir/build/reports/jacoco/test/jacocoTestReport.xml")
+        }
+
+        html {
+            enabled true
+            destination file("$rootDir/build/reports/jacoco/test/html")
+        }
+    }
+}
+
+tasks.named("jacocoTestReport") {
+    dependsOn tasks.named("testCodeCoverageReport", JacocoReport)
 }

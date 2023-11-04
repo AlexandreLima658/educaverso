@@ -7,13 +7,14 @@ import app.educaverso.commons.domain.value.objects.BaseId
 abstract class BaseEntity<Id : BaseId<*>>(val id: Id) {
 
     companion object {
-        fun <T> execute(command: FactoryMethodCommand<T>): T where T : BaseEntity<*> {
+        fun <T : BaseEntity<*>> execute(command: FactoryMethodCommand<T>): T {
             return command.execute()
         }
     }
 
-    open fun <T> execute(actionCommand: ActionCommand<T>) where T : BaseEntity<*> {
-        actionCommand.execute(this as T)
+    open fun <T : BaseEntity<Id>> execute(actionCommand: ActionCommand<T>) {
+        val command = this as T
+        actionCommand.execute(command)
     }
 
     override fun hashCode(): Int {

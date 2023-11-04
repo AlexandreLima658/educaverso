@@ -1,5 +1,6 @@
 package app.educaverso.commons.domain.events
 
+import app.educaverso.commons.domain.value.objects.EventId
 import org.junit.Test
 import org.mockito.Mockito.times
 import org.mockito.Mockito.verify
@@ -15,7 +16,7 @@ class DomainEventDispatcherTest {
         // Given
         val dispatcher = DomainEventDispatcher
 
-        val eventHandler = mock<EventHandler> {
+        val eventHandler = mock<EventHandler<Event>> {
             on { eventName() } doReturn "event.created"
         }
 
@@ -32,7 +33,7 @@ class DomainEventDispatcherTest {
         // Given
         val dispatcher = DomainEventDispatcher
 
-        val eventHandler = mock<EventHandler> {
+        val eventHandler = mock<EventHandler<Event>> {
             on { eventName() } doReturn "event.created"
         }
 
@@ -50,7 +51,7 @@ class DomainEventDispatcherTest {
         // Given
         val dispatcher = DomainEventDispatcher
 
-        val eventHandler = mock<EventHandler> {
+        val eventHandler = mock<EventHandler<Event>> {
             on { eventName() } doReturn "event.created"
         }
 
@@ -72,7 +73,7 @@ class DomainEventDispatcherTest {
         // Given
         val dispatcher = DomainEventDispatcher
 
-        val eventHandler = mock<EventHandler> {
+        val eventHandler = mock<EventHandler<Event>> {
             on { eventName() } doReturn "event.created"
         }
 
@@ -90,7 +91,7 @@ class DomainEventDispatcherTest {
         // Given
         val dispatcher = DomainEventDispatcher
 
-        val eventHandler = mock<EventHandler> {
+        val eventHandler = mock<EventHandler<Event>> {
             on { eventName() } doReturn "event.created"
         }
 

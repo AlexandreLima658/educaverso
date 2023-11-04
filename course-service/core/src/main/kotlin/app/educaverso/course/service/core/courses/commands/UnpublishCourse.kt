@@ -5,8 +5,8 @@ import app.educaverso.course.service.core.courses.Course
 
 class UnpublishCourse : ActionCommand<Course> {
 
-    override fun execute(course: Course) {
-        course.published = false
+    override fun execute(entity: Course) {
+        entity.published = false
     }
 
 }

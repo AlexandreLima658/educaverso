@@ -6,7 +6,7 @@ import app.educaverso.course.service.core.courses.Course
 import app.educaverso.course.service.core.courses.value.objects.CourseName
 
 class UpdateCourse(val name: String) : ActionCommand<Course>, EventCommand {
-    override fun execute(course: Course) {
-        course.name = CourseName(name)
+    override fun execute(entity: Course) {
+        entity.name = CourseName(name)
     }
 }

@@ -3,17 +3,17 @@ package app.educaverso.commons.domain.events
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-object DomainEventDispatcher : EventDispatcher {
+object DomainEventDispatcher : EventDispatcher<Event> {
 
-    private val handlers: MutableMap<String, MutableList<EventHandler>> = mutableMapOf()
+    private val handlers: MutableMap<String, MutableList<EventHandler<Event>>> = mutableMapOf()
 
-    override fun register(handler: EventHandler) {
+    override fun register(handler: EventHandler<Event>) {
         require(!has(handler)) { return }
 
         this.handlers.computeIfAbsent(handler.eventName()) { mutableListOf() }.add(handler)
     }
 
-    override fun remove(handler: EventHandler) {
+    override fun remove(handler: EventHandler<Event>) {
         if (has(handler))
             this.handlers[handler.eventName()]?.remove(handler)
     }
@@ -28,7 +28,7 @@ object DomainEventDispatcher : EventDispatcher {
         }
     }
 
-    override fun has(handler: EventHandler): Boolean {
+    override fun has(handler: EventHandler<Event>): Boolean {
         return this.handlers.containsKey(handler.eventName()) && this.handlers[handler.eventName()]!!.contains(handler)
     }
 

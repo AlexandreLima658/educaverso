@@ -1,18 +1,13 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+    id 'kotlin-conventions'
 }
+
+group 'app.educaverso.course.service.infrastructure.mongodb-repository'
 
 dependencies {
     implementation project(':commons')
     implementation project(':course-service:core')
 
-
     implementation("org.mongodb:mongodb-driver-kotlin-coroutine:$mongodbVersion")
-
-
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
-}
-
-repositories {
-    mavenCentral()
 }

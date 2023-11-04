@@ -13,10 +13,12 @@ class CourseMongodbRepository : CourseRepository {
     private val collection = database.getCollection<CourseDocument>("courses")
 
     override fun persist(course: Course) {
+
+
         runBlocking {
             collection.insertOne(
                 CourseDocument(
-                    _id = course.id.value.toString(),
+                    id = course.id.value.toString(),
                     name = course.name.value,
                     published = course.published
                 )
@@ -28,9 +30,9 @@ class CourseMongodbRepository : CourseRepository {
 
         runBlocking {
             collection.replaceOne(
-                eq(CourseDocument::_id.name, course.id.value.toString()),
+                eq("_id", course.id.value.toString()),
                 CourseDocument(
-                    _id = course.id.value.toString(),
+                    id = course.id.value.toString(),
                     name = course.name.value,
                     published = course.published
                 )
@@ -41,7 +43,7 @@ class CourseMongodbRepository : CourseRepository {
     override fun findBy(id: CourseId): Course = runBlocking {
 
         val result = collection.find(
-            eq(CourseDocument::_id.name, id.value.toString())
+            eq("_id", id.value.toString())
         ).firstOrNull()?.toCourse()
 
         require(result != null) { "Course not found" }

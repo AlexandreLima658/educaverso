@@ -23,6 +23,7 @@ fun Route.courses() {
     val unpublishCourse by inject<UnpublishCourseUseCase>()
 
     route("courses") {
+
         post {
             val command = call.receive<CreateCourse>()
 

@@ -3,16 +3,17 @@ package app.educaverso.course.service.infrastructure.mongodb.repository
 import app.educaverso.commons.domain.value.objects.CourseId
 import app.educaverso.course.service.core.courses.Course
 import app.educaverso.course.service.core.courses.value.objects.CourseName
+import org.bson.codecs.pojo.annotations.BsonId
 
 data class CourseDocument(
-    val _id: String,
+    @BsonId val id: String,
     val name: String,
     val published: Boolean
 ) {
 
     fun toCourse() : Course {
         return Course(
-            id = CourseId.fromString(_id),
+            id = CourseId.fromString(id),
             name = CourseName(name),
             published = published
         )

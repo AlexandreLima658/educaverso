@@ -18,12 +18,12 @@ class UpdateCourseTest {
 
         // When
         var updateCourseCommand = UpdateCourse(
-            newName = "New course name"
+            name = "New course name"
         )
         course.execute(updateCourseCommand)
 
         // Then
-        assertEquals(course.name.value, updateCourseCommand.newName)
+        assertEquals(course.name.value, updateCourseCommand.name)
 
     }
 

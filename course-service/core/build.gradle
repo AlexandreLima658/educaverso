@@ -1,12 +1,25 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+    id 'kotlin-conventions'
 }
+
+group 'app.educaverso.course.service.core'
 
 dependencies {
     implementation project(':commons')
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }
-
-repositories {
-    mavenCentral()
-}
+//
+//configurations {
+//    testClasses {
+//        extendsFrom testImplementation
+//    }
+//}
+//
+//task testJar(type: Jar) {
+//    from sourceSets.test.output
+//    archiveClassifier.set('test')
+//}
+//
+//artifacts {
+//    testClasses testJar
+//}

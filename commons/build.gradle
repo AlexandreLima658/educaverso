@@ -1,16 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+    id 'kotlin-conventions'
 }
 
-dependencies {
-
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion")
-}
-
-repositories {
-    mavenCentral()
-}
-
+group 'app.educaverso.commons'

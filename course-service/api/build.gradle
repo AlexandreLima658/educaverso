@@ -1,10 +1,12 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+    id 'kotlin-conventions'
+
     id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlinVersion"
     id "io.ktor.plugin" version "$ktorVersion"
-
-    id 'application'
 }
+
+group 'app.educaverso.course.service.api'
 
 dependencies {
 
@@ -25,21 +27,8 @@ dependencies {
 
     // Koin
     implementation("io.insert-koin:koin-ktor:$koinVersion")
-
-    // Logback
-    implementation("ch.qos.logback:logback-classic:$logbackVersion")
-
-    // JUnit
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
-}
-
-repositories {
-    mavenCentral()
 }
 
 application {
-    mainClass = "app.educaverso.course.service.api.main"
+    mainClass.set("app.educaverso.course.service.api.MainKt")
 }
-
-
-

@@ -3,8 +3,9 @@ version: "3.8"
 services:
   app:
     container_name: app.educaverso.course.service.api
-    build: .
-    profiles: [ "api" ]
+    build:
+        context: ../../
+        dockerfile: Dockerfile
     restart: unless-stopped
     env_file:
       - .env

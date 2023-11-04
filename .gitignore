@@ -1,5 +1,8 @@
 # Environment files
-.env
+sandbox/app/.env
+
+# Sandbox
+sandbox/.docker
 
 # User-specific stuff
 .idea/**/workspace.xml

@@ -1,6 +1,5 @@
 package app.educaverso.commons.domain.events
 
-import app.educaverso.commons.domain.value.objects.EventId
 import org.junit.Test
 import org.mockito.Mockito.times
 import org.mockito.Mockito.verify

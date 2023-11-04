@@ -9,6 +9,7 @@ import app.educaverso.course.service.core.courses.commands.CreateCourse
 import app.educaverso.course.service.core.courses.commands.PublishCourse
 import app.educaverso.course.service.core.courses.commands.UnpublishCourse
 import app.educaverso.course.service.core.courses.commands.UpdateCourse
+import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
@@ -29,7 +30,10 @@ fun Route.courses() {
 
             val output = createCourse.execute(command)
 
-            call.respond(output)
+            call.respond(
+                status = HttpStatusCode.Created,
+                message = output
+            )
         }
 
         put("{courseId}") {
@@ -38,9 +42,9 @@ fun Route.courses() {
 
             val command = call.receive<UpdateCourse>()
 
-            val output = updateCourse.execute(CourseId.fromString(courseId.toString()), command)
+            updateCourse.execute(CourseId.fromString(courseId.toString()), command)
 
-            call.respond(output)
+            call.respond("Course updated")
         }
 
         put("{courseId}/publish") {
@@ -49,9 +53,9 @@ fun Route.courses() {
 
             val command = PublishCourse()
 
-            val output = publishCourse.execute(CourseId.fromString(courseId.toString()), command)
+            publishCourse.execute(CourseId.fromString(courseId.toString()), command)
 
-            call.respond(output)
+            call.respond("Course published")
         }
 
         put("{courseId}/unpublish") {
@@ -60,9 +64,9 @@ fun Route.courses() {
 
             val command = UnpublishCourse()
 
-            val output = unpublishCourse.execute(CourseId.fromString(courseId.toString()), command)
+            unpublishCourse.execute(CourseId.fromString(courseId.toString()), command)
 
-            call.respond(output)
+            call.respond("Course unpublished")
         }
     }
 }

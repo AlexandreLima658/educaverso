@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   app:
+    hostname: educaverso-api
     container_name: app.educaverso.course.service.api
     build:
         context: ../../
@@ -13,6 +14,9 @@ services:
       - "${PORT}:${PORT}"
     networks:
       - educaverso-network
+      - educaverso-services-network
 
 networks:
   educaverso-network:
+  educaverso-services-network:
+    external: true

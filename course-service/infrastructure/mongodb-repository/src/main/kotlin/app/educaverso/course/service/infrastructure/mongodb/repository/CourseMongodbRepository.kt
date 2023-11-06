@@ -3,17 +3,16 @@ package app.educaverso.course.service.infrastructure.mongodb.repository
 import app.educaverso.commons.domain.value.objects.CourseId
 import app.educaverso.course.service.core.courses.Course
 import app.educaverso.course.service.core.courses.CourseRepository
-import app.educaverso.course.service.infrastructure.mongodb.config.database
+import app.educaverso.course.service.infrastructure.mongodb.config.MongodbConnection
 import com.mongodb.client.model.Filters.eq
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.runBlocking
 
 class CourseMongodbRepository : CourseRepository {
 
-    private val collection = database.getCollection<CourseDocument>("courses")
+    private val collection = MongodbConnection.getDatabase().getCollection<CourseDocument>("courses")
 
     override fun persist(course: Course) {
-
 
         runBlocking {
             collection.insertOne(

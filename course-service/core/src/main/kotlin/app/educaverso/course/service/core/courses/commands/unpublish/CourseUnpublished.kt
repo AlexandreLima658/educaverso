@@ -1,4 +1,4 @@
-package app.educaverso.course.service.core.courses.events
+package app.educaverso.course.service.core.courses.commands.unpublish
 
 import app.educaverso.commons.domain.events.Event
 

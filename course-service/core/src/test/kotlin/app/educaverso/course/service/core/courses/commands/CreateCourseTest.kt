@@ -1,6 +1,7 @@
 package app.educaverso.course.service.core.courses.commands
 
 import app.educaverso.commons.domain.entities.BaseEntity
+import app.educaverso.course.service.core.courses.commands.create.CreateCourse
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotNull
 import org.junit.Test

@@ -5,10 +5,10 @@ import app.educaverso.course.service.application.courses.create.CreateCourseUseC
 import app.educaverso.course.service.application.courses.publish.PublishCourseUseCase
 import app.educaverso.course.service.application.courses.unpublish.UnpublishCourseUseCase
 import app.educaverso.course.service.application.courses.update.UpdateCourseUseCase
-import app.educaverso.course.service.core.courses.commands.CreateCourse
-import app.educaverso.course.service.core.courses.commands.PublishCourse
-import app.educaverso.course.service.core.courses.commands.UnpublishCourse
-import app.educaverso.course.service.core.courses.commands.UpdateCourse
+import app.educaverso.course.service.core.courses.commands.create.CreateCourse
+import app.educaverso.course.service.core.courses.commands.publish.PublishCourse
+import app.educaverso.course.service.core.courses.commands.unpublish.UnpublishCourse
+import app.educaverso.course.service.core.courses.commands.update.UpdateCourse
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*

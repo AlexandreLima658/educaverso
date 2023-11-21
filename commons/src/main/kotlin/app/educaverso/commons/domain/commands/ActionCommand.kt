@@ -2,6 +2,6 @@ package app.educaverso.commons.domain.commands
 
 import app.educaverso.commons.domain.entities.BaseEntity
 
-interface ActionCommand<T : BaseEntity<*>> {
-    fun execute(entity: T)
+abstract class ActionCommand<T : BaseEntity<*>> : EventCommand() {
+    abstract fun execute(entity: T)
 }

@@ -1,6 +1,8 @@
 package app.educaverso.course.service.core.courses.commands
 
 import app.educaverso.commons.domain.entities.BaseEntity
+import app.educaverso.course.service.core.courses.commands.create.CreateCourse
+import app.educaverso.course.service.core.courses.commands.update.UpdateCourse
 import org.junit.Test
 import kotlin.test.assertEquals
 

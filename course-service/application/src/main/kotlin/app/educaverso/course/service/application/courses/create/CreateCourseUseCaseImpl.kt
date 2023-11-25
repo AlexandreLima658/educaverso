@@ -1,6 +1,5 @@
 package app.educaverso.course.service.application.courses.create
 
-import app.educaverso.commons.domain.entities.BaseEntity
 import app.educaverso.course.service.core.courses.Course
 import app.educaverso.course.service.core.courses.CourseRepository
 import app.educaverso.course.service.core.courses.commands.create.CreateCourse
@@ -8,7 +7,7 @@ import app.educaverso.course.service.core.courses.commands.create.CreateCourse
 class CreateCourseUseCaseImpl(private val repository: CourseRepository) : CreateCourseUseCase {
     override fun execute(command: CreateCourse): CreateCourseOutput {
 
-        val course = BaseEntity.execute(command)
+        val course = command.execute()
 
         repository.persist(course)
 

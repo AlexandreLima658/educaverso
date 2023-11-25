@@ -3,9 +3,9 @@ package app.educaverso.commons.domain.commands
 import app.educaverso.commons.domain.events.DomainEventDispatcher
 import app.educaverso.commons.domain.events.Event
 
-abstract class EventCommand {
+abstract class EventCommand<T : Event> {
 
-    var event: Event? = null
+    var event: T? = null
 
     fun dispatch() {
         event?.let {

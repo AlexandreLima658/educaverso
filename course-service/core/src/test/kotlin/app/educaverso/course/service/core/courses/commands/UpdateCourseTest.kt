@@ -1,6 +1,5 @@
 package app.educaverso.course.service.core.courses.commands
 
-import app.educaverso.commons.domain.entities.BaseEntity
 import app.educaverso.course.service.core.courses.commands.create.CreateCourse
 import app.educaverso.course.service.core.courses.commands.update.UpdateCourse
 import org.junit.Test
@@ -12,11 +11,9 @@ class UpdateCourseTest {
     fun `should update a course`() {
 
         // Given
-        var course = BaseEntity.execute(
-            CreateCourse(
-                name = "Course name"
-            )
-        )
+        var course = CreateCourse(
+            name = "Course name"
+        ).execute()
 
         // When
         var updateCourseCommand = UpdateCourse(

@@ -1,6 +1,5 @@
 package app.educaverso.course.service.core.courses.commands
 
-import app.educaverso.commons.domain.entities.BaseEntity
 import app.educaverso.course.service.core.courses.commands.create.CreateCourse
 import app.educaverso.course.service.core.courses.commands.publish.PublishCourse
 import org.junit.Test
@@ -11,11 +10,10 @@ class PublishCourseTest {
     @Test
     fun `should publish a course`() {
         // Given
-        var course = BaseEntity.execute(
-            CreateCourse(
-                name = "Course name"
-            )
-        )
+        var course = CreateCourse(
+            name = "Course name"
+        ).execute()
+
 
         // When
         course.execute(PublishCourse())

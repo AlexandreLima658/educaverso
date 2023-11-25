@@ -4,7 +4,7 @@ import app.educaverso.commons.domain.commands.FactoryMethodCommand
 import app.educaverso.course.service.core.courses.Course
 import app.educaverso.course.service.core.courses.fields.CourseName
 
-data class CreateCourse(val name: String) : FactoryMethodCommand<Course>() {
+data class CreateCourse(val name: String) : FactoryMethodCommand<Course, CourseCreated>() {
     override fun execute(): Course {
 
         val course = Course(

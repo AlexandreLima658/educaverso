@@ -1,6 +1,6 @@
 package app.educaverso.course.service.api.plugins
 
-import app.educaverso.course.service.api.routes.courses
+import app.educaverso.course.service.api.routes.courses.courses
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
 

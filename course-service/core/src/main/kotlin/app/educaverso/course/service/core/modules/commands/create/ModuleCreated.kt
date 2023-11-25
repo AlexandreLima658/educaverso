@@ -1,3 +1,11 @@
 package app.educaverso.course.service.core.modules.commands.create
 
-data class ModuleCreated()
+import app.educaverso.commons.domain.events.Event
+
+data class ModuleCreated(
+    val moduleId: String,
+    val moduleName: String,
+    val courseId: String,
+) : Event() {
+    override fun name() = "module.created"
+}

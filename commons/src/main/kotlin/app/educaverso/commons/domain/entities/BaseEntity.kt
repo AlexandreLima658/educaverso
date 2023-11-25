@@ -1,18 +1,12 @@
 package app.educaverso.commons.domain.entities
 
 import app.educaverso.commons.domain.commands.ActionCommand
-import app.educaverso.commons.domain.commands.FactoryMethodCommand
+import app.educaverso.commons.domain.events.Event
 import app.educaverso.commons.domain.value.objects.BaseId
 
 abstract class BaseEntity<Id : BaseId<*>>(val id: Id) {
 
-    companion object {
-        fun <T : BaseEntity<*>> execute(command: FactoryMethodCommand<T>): T {
-            return command.execute()
-        }
-    }
-
-    open fun <T : BaseEntity<Id>> execute(actionCommand: ActionCommand<T>) {
+    open fun <T : BaseEntity<Id>, E : Event> execute(actionCommand: ActionCommand<T, E>) {
         val command = this as T
         actionCommand.execute(command)
     }

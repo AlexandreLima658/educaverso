@@ -1,6 +1,5 @@
-package app.educaverso.course.service.core.value.objects
+package app.educaverso.course.service.core.courses.fields
 
-import app.educaverso.course.service.core.courses.fields.CourseName
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails

@@ -1,4 +1,4 @@
-package app.educaverso.course.service.api.routes
+package app.educaverso.course.service.api.routes.courses
 
 import app.educaverso.commons.domain.value.objects.CourseId
 import app.educaverso.course.service.application.courses.create.CreateCourseUseCase

@@ -24,3 +24,9 @@ dependencies {
 jacoco {
     toolVersion = "0.8.11"
 }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}

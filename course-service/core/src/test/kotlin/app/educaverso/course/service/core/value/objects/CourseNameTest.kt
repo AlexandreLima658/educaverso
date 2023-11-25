@@ -1,6 +1,6 @@
 package app.educaverso.course.service.core.value.objects
 
-import app.educaverso.course.service.core.modules.value.objects.ModuleName
+import app.educaverso.course.service.core.courses.fields.CourseName
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
@@ -13,7 +13,7 @@ class CourseNameTest {
         var aName = "Course name"
 
         // When
-        var aCourseName = ModuleName(aName)
+        var aCourseName = CourseName(aName)
 
         // Then
         assertEquals(aCourseName.value, aName)
@@ -26,7 +26,7 @@ class CourseNameTest {
         var aName = ""
 
         // When
-        var aError = assertFails { ModuleName(aName) }
+        var aError = assertFails { CourseName(aName) }
 
         // Then
         assertEquals(aError.message, "Course name cannot be empty")

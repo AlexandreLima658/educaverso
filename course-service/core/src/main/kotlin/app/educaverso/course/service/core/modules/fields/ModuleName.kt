@@ -1,4 +1,4 @@
-package app.educaverso.course.service.core.modules.value.objects
+package app.educaverso.course.service.core.modules.fields
 
 class ModuleName(val value: String) {
     init {

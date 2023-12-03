@@ -31,4 +31,17 @@ class CourseNameTest {
         assertEquals(aError.message, "Course name cannot be empty")
     }
 
+
+    @Test
+    fun `should launch an exception when the course name is greater than 255 characters`() {
+        // Given
+        var aName = "a".repeat(256)
+
+        // When
+        var aError = assertFails { CourseName(aName) }
+
+        // Then
+        assertEquals(aError.message, "Course name cannot be longer than 255 characters")
+    }
+
 }

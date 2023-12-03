@@ -1,11 +1,12 @@
 package app.educaverso.course.service.core.modules.commands.create
 
-import app.educaverso.commons.domain.commands.FactoryMethodCommand
+import app.educaverso.commons.domain.commands.FactoryMethodDispatcherCommand
 import app.educaverso.commons.domain.value.objects.CourseId
 import app.educaverso.course.service.core.modules.Module
 import app.educaverso.course.service.core.modules.fields.ModuleName
 
-class CreateModule(val name: String, val courseId: String) : FactoryMethodCommand<Module, ModuleCreated>() {
+data class CreateModule(val name: String, val courseId: String) :
+    FactoryMethodDispatcherCommand<Module, ModuleCreated>() {
 
     override fun execute(): Module {
 

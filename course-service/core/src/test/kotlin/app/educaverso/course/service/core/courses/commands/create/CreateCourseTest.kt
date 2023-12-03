@@ -1,6 +1,5 @@
-package app.educaverso.course.service.core.courses.commands
+package app.educaverso.course.service.core.courses.commands.create
 
-import app.educaverso.course.service.core.courses.commands.create.CreateCourse
 import junit.framework.TestCase.*
 import org.junit.Test
 

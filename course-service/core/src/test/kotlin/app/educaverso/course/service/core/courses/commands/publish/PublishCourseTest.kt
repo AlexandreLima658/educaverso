@@ -1,7 +1,6 @@
-package app.educaverso.course.service.core.courses.commands
+package app.educaverso.course.service.core.courses.commands.publish
 
 import app.educaverso.course.service.core.courses.commands.create.CreateCourse
-import app.educaverso.course.service.core.courses.commands.publish.PublishCourse
 import org.junit.Test
 import kotlin.test.assertTrue
 

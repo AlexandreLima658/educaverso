@@ -1,10 +1,10 @@
 package app.educaverso.course.service.core.courses.commands.create
 
-import app.educaverso.commons.domain.commands.FactoryMethodCommand
+import app.educaverso.commons.domain.commands.FactoryMethodDispatcherCommand
 import app.educaverso.course.service.core.courses.Course
 import app.educaverso.course.service.core.courses.fields.CourseName
 
-data class CreateCourse(val name: String) : FactoryMethodCommand<Course, CourseCreated>() {
+data class CreateCourse(val name: String) : FactoryMethodDispatcherCommand<Course, CourseCreated>() {
     override fun execute(): Course {
 
         val course = Course(

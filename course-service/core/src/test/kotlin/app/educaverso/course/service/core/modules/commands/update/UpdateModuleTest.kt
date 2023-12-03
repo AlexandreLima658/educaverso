@@ -2,8 +2,8 @@ package app.educaverso.course.service.core.modules.commands.update
 
 import app.educaverso.commons.domain.value.objects.CourseId
 import app.educaverso.course.service.core.modules.commands.create.CreateModule
-import kotlin.test.assertEquals
 import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class UpdateModuleTest {
     @Test

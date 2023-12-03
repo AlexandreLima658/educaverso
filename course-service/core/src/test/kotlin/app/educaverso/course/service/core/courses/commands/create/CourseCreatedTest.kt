@@ -1,7 +1,7 @@
 package app.educaverso.course.service.core.courses.commands.create
 
 import app.educaverso.commons.domain.value.objects.CourseId
-import junit.framework.TestCase
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
 class CourseCreatedTest {
@@ -19,9 +19,9 @@ class CourseCreatedTest {
         )
 
         // Then
-        TestCase.assertEquals(event.name(), "course.created")
-        TestCase.assertEquals(event.courseId, courseId)
-        TestCase.assertEquals(event.courseName, courseName)
+        assertEquals(event.name(), "course.created")
+        assertEquals(event.courseId, courseId)
+        assertEquals(event.courseName, courseName)
     }
 
 }

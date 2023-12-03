@@ -14,8 +14,15 @@ object DomainEventDispatcher : EventDispatcher<Event> {
     }
 
     override fun remove(handler: EventHandler<Event>) {
-        if (has(handler))
-            this.handlers[handler.eventName()]?.remove(handler)
+
+        if (has(handler)) {
+            this.handlers[handler.eventName()]?.clear()
+
+            if (this.handlers[handler.eventName()].isNullOrEmpty())
+                this.handlers.remove(handler.eventName())
+
+        }
+
     }
 
     override fun dispatch(event: Event) {

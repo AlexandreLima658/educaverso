@@ -1,11 +1,12 @@
 package app.educaverso.commons.domain.events
 
+import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertTrue
 import org.junit.Test
 import org.mockito.Mockito.times
 import org.mockito.Mockito.verify
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
-import kotlin.test.assertEquals
 
 class DomainEventDispatcherTest {
 
@@ -23,7 +24,7 @@ class DomainEventDispatcherTest {
         dispatcher.register(eventHandler)
 
         // Then
-        assert(dispatcher.has(eventHandler))
+        assertTrue(dispatcher.has(eventHandler))
 
     }
 
@@ -41,9 +42,11 @@ class DomainEventDispatcherTest {
         dispatcher.remove(eventHandler)
 
         // Then
-        assert(!dispatcher.has(eventHandler))
-
+        assertTrue(!dispatcher.has(eventHandler))
+        assertTrue(!dispatcher.handlers().containsKey(eventHandler.eventName()))
+        assertTrue(dispatcher.handlers().isEmpty())
     }
+
 
     @Test
     fun `should dispatch an event and notify the handler`() {
@@ -100,6 +103,7 @@ class DomainEventDispatcherTest {
 
         // Then
         assertEquals(1, dispatcher.handlers().size)
+        assertEquals(1, dispatcher.handlers()[eventHandler.eventName()]?.size)
     }
 
 }

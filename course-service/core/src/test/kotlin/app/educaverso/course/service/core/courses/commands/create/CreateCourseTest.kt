@@ -13,20 +13,20 @@ class CreateCourseTest {
         )
 
         // When
-        val aCourse = command.execute()
+        val (aCourse, event) = command.execute()
 
         // Then
         assertNotNull(aCourse.id)
         assertEquals(aCourse.name.value, command.name)
         assertFalse(aCourse.published)
 
-        assertNotNull(command.event)
-        assertNotNull(command.event?.courseId)
-        assertNotNull(command.event?.courseName)
-        assertEquals(command.event?.name(), "course.created")
-        assertNotNull(command.event?.occurredOn)
-        assertEquals(command.event?.courseId, aCourse.id.value.toString())
-        assertEquals(command.event?.courseName, aCourse.name.value)
+        assertNotNull(event)
+        assertNotNull(event?.courseId)
+        assertNotNull(event?.courseName)
+        assertEquals(event?.name(), "course.created")
+        assertNotNull(event?.occurredOn)
+        assertEquals(event?.courseId, aCourse.id.value.toString())
+        assertEquals(event?.courseName, aCourse.name.value)
     }
 
 }

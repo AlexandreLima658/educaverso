@@ -1,7 +1,7 @@
 package app.educaverso.course.service.core.modules.commands.create
 
-import app.educaverso.commons.domain.value.objects.CourseId
-import app.educaverso.commons.domain.value.objects.ModuleId
+import app.educaverso.commons.domain.values.CourseId
+import app.educaverso.commons.domain.values.ModuleId
 import junit.framework.TestCase.*
 import org.junit.Test
 
@@ -19,7 +19,7 @@ class CreateModuleTest {
         )
 
         // When
-        val aModule = command.execute()
+        val (aModule, event) = command.execute()
 
         // Then
 
@@ -28,14 +28,14 @@ class CreateModuleTest {
         assertEquals(aModule.courseId, CourseId.fromString(command.courseId))
         assertFalse(aModule.activated)
 
-        assertNotNull(command.event)
-        assertNotNull(command.event?.courseId)
-        assertNotNull(command.event?.moduleId)
-        assertEquals(command.event?.name(), "module.created")
-        assertNotNull(command.event?.occurredOn)
-        assertEquals(command.event?.courseId, aModule.courseId.value.toString())
-        assertEquals(ModuleId.fromString(command.event!!.moduleId), aModule.id)
-        assertEquals(command.event?.moduleName, aModule.name.value)
+        assertNotNull(event)
+        assertNotNull(event?.courseId)
+        assertNotNull(event?.moduleId)
+        assertEquals(event?.name(), "module.created")
+        assertNotNull(event?.occurredOn)
+        assertEquals(event?.courseId, aModule.courseId.value.toString())
+        assertEquals(ModuleId.fromString(event!!.moduleId), aModule.id)
+        assertEquals(event?.moduleName, aModule.name.value)
     }
 
 }

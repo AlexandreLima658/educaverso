@@ -1,6 +1,6 @@
 package app.educaverso.course.service.core.courses.commands.unpublish
 
-import app.educaverso.commons.domain.value.objects.CourseId
+import app.educaverso.commons.domain.values.CourseId
 import org.junit.Test
 import kotlin.test.assertEquals
 

@@ -2,13 +2,13 @@ package app.educaverso.commons.domain.entities
 
 import app.educaverso.commons.domain.commands.ActionCommand
 import app.educaverso.commons.domain.events.Event
-import app.educaverso.commons.domain.value.objects.BaseId
+import app.educaverso.commons.domain.values.BaseId
 
 abstract class BaseEntity<Id : BaseId<*>>(val id: Id) {
 
-    open fun <T : BaseEntity<Id>, E : Event> execute(actionCommand: ActionCommand<T, E>) {
+    open fun <T : BaseEntity<Id>, E : Event> execute(actionCommand: ActionCommand<T, E>): E {
         val command = this as T
-        actionCommand.execute(command)
+        return actionCommand.execute(command)
     }
 
     override fun hashCode(): Int {

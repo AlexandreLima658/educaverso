@@ -1,6 +1,6 @@
 package app.educaverso.course.service.core.courses.commands.create
 
-import app.educaverso.commons.domain.value.objects.CourseId
+import app.educaverso.commons.domain.values.CourseId
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 

@@ -1,10 +1,8 @@
 package app.educaverso.course.service.application.courses.update
 
-import app.educaverso.course.service.application.courses.create.CreateCourseUseCaseImpl
 import app.educaverso.course.service.core.courses.CourseRepository
 import app.educaverso.course.service.core.courses.commands.create.CreateCourse
 import app.educaverso.course.service.core.courses.commands.update.UpdateCourse
-import junit.framework.TestCase
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 import org.mockito.Mockito
@@ -19,7 +17,7 @@ class UpdateCourseUseCaseImplTest{
     fun `should update course`(){
 
         // Given
-        val aCourse = CreateCourse(
+        val (aCourse, _) = CreateCourse(
             name = "A Course"
         ).execute()
 

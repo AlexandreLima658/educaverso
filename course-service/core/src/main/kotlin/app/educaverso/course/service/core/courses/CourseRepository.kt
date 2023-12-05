@@ -1,6 +1,6 @@
 package app.educaverso.course.service.core.courses
 
-import app.educaverso.commons.domain.value.objects.CourseId
+import app.educaverso.commons.domain.values.CourseId
 
 interface CourseRepository {
     fun persist(course: Course)

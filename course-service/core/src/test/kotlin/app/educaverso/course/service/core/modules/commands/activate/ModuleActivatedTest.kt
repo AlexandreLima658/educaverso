@@ -1,6 +1,6 @@
 package app.educaverso.course.service.core.modules.commands.activate
 
-import app.educaverso.commons.domain.value.objects.ModuleId
+import app.educaverso.commons.domain.values.ModuleId
 import org.junit.Test
 import kotlin.test.assertEquals
 

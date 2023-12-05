@@ -16,7 +16,7 @@ class UnpublishCourseUseCaseImplTest {
     fun `should unpublish course`() {
 
         // Given
-        val aCourse = CreateCourse(
+        val (aCourse, _) = CreateCourse(
             name = "Course Name"
         ).execute()
 

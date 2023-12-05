@@ -16,7 +16,7 @@ class PublishCourseUseCaseImplTest {
     fun `should publish an course`() {
 
         // Given
-        val aCourse = CreateCourse(
+        val (aCourse, _) = CreateCourse(
             name = "Course Name"
         ).execute()
 

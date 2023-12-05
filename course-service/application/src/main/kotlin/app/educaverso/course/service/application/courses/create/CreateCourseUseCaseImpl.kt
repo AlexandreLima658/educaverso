@@ -1,5 +1,6 @@
 package app.educaverso.course.service.application.courses.create
 
+import app.educaverso.commons.domain.events.DomainEventDispatcher.dispatch
 import app.educaverso.course.service.core.courses.Course
 import app.educaverso.course.service.core.courses.CourseRepository
 import app.educaverso.course.service.core.courses.commands.create.CreateCourse
@@ -7,11 +8,11 @@ import app.educaverso.course.service.core.courses.commands.create.CreateCourse
 class CreateCourseUseCaseImpl(private val repository: CourseRepository) : CreateCourseUseCase {
     override fun execute(command: CreateCourse): CreateCourseOutput {
 
-        val course = command.execute()
+        val (course, event) = command.execute()
 
         repository.persist(course)
 
-        command.dispatch()
+        dispatch(event)
 
         return mapToCreateCourseOutput(course)
     }

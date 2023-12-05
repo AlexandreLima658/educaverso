@@ -1,6 +1,6 @@
 package app.educaverso.course.service.infrastructure.mongodb.repository
 
-import app.educaverso.commons.domain.value.objects.CourseId
+import app.educaverso.commons.domain.values.CourseId
 import junit.framework.TestCase.assertTrue
 import org.junit.Test
 

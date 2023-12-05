@@ -1,11 +1,9 @@
 package app.educaverso.commons.domain.entities
 
-import app.educaverso.commons.domain.value.objects.BaseId
-import junit.framework.TestCase.assertNotNull
-import junit.framework.TestCase.assertTrue
+import app.educaverso.commons.domain.values.BaseId
+import junit.framework.TestCase.*
 import org.junit.Test
 import org.mockito.kotlin.mock
-import kotlin.test.assertFalse
 
 class BaseEntityTest {
 
@@ -49,6 +47,59 @@ class BaseEntityTest {
 
         // Then
         assertFalse(baseEntity.equals(otherBaseEntity))
+
+    }
+
+    @Test
+    fun `should be equals to other BaseEntity with same id and same type`() {
+        // Given
+        val id = object : BaseId<Int>(1) {}
+
+        // When
+        val baseEntity = object : BaseEntity<BaseId<Int>>(id) {}
+        val otherBaseEntity = object : BaseEntity<BaseId<Int>>(id) {}
+
+        // Then
+        assertTrue(baseEntity.equals(otherBaseEntity))
+
+    }
+
+    @Test
+    fun `should be equals to itself`() {
+        // Given
+        val id = object : BaseId<Int>(1) {}
+
+        // When
+        val baseEntity = object : BaseEntity<BaseId<Int>>(id) {}
+
+        // Then
+        assertTrue(baseEntity == baseEntity)
+
+    }
+
+    @Test
+    fun `should not be equals to null`() {
+        // Given
+        val id = object : BaseId<Int>(1) {}
+
+        // When
+        val baseEntity = object : BaseEntity<BaseId<Int>>(id) {}
+
+        // Then
+        assertFalse(baseEntity == null)
+
+    }
+
+    @Test
+    fun `should not be equals to other object`() {
+        // Given
+        val id = object : BaseId<Int>(1) {}
+
+        // When
+        val baseEntity = object : BaseEntity<BaseId<Int>>(id) {}
+
+        // Then
+        assertFalse(baseEntity.equals(""))
 
     }
 

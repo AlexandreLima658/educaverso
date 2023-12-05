@@ -1,4 +1,4 @@
-package app.educaverso.commons.domain.value.objects
+package app.educaverso.commons.domain.values
 
 import java.util.*
 

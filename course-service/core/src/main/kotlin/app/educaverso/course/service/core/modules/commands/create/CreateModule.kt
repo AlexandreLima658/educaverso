@@ -1,14 +1,14 @@
 package app.educaverso.course.service.core.modules.commands.create
 
-import app.educaverso.commons.domain.commands.FactoryMethodDispatcherCommand
-import app.educaverso.commons.domain.value.objects.CourseId
+import app.educaverso.commons.domain.commands.FactoryMethodCreate
+import app.educaverso.commons.domain.values.CourseId
 import app.educaverso.course.service.core.modules.Module
 import app.educaverso.course.service.core.modules.fields.ModuleName
 
 data class CreateModule(val name: String, val courseId: String) :
-    FactoryMethodDispatcherCommand<Module, ModuleCreated>() {
+    FactoryMethodCreate<Module, ModuleCreated> {
 
-    override fun execute(): Module {
+    override fun execute(): Pair<Module, ModuleCreated> {
 
         val module = Module(
             courseId = CourseId.fromString(courseId),
@@ -16,13 +16,13 @@ data class CreateModule(val name: String, val courseId: String) :
             activated = false
         )
 
-        this.event = ModuleCreated(
+        val event = ModuleCreated(
             moduleId = module.id.value.toString(),
             moduleName = name,
             courseId = courseId
         )
 
-        return module
+        return Pair(module, event)
     }
 
 }

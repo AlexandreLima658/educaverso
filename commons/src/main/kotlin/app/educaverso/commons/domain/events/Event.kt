@@ -1,6 +1,6 @@
 package app.educaverso.commons.domain.events
 
-import app.educaverso.commons.domain.value.objects.EventId
+import app.educaverso.commons.domain.values.EventId
 import java.time.Instant
 
 abstract class Event(

@@ -1,28 +1,30 @@
 package app.educaverso.course.service.core.modules.commands.update
 
-import app.educaverso.commons.domain.value.objects.CourseId
+import app.educaverso.commons.domain.values.CourseId
 import app.educaverso.course.service.core.modules.commands.create.CreateModule
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertTrue
+import org.junit.Test
 
 class UpdateModuleTest {
     @Test
     fun `should update module`() {
         // Given
-        var module = CreateModule(
+        var (module, _) = CreateModule(
             name = "Module name",
             courseId = CourseId.generate().value.toString(),
         ).execute()
 
-        // When
-
-        var updateModuleCommand = UpdateModule(
+        var command = UpdateModule(
             name = "New module name",
-            )
-        module.execute(updateModuleCommand)
+        )
+
+        // When
+        val event = module.execute(command)
 
         // Then
-        assertEquals(module.name.value, updateModuleCommand.name)
+        assertEquals(module.name.value, command.name)
+        assertTrue(event is ModuleUpdated)
     }
 
 }

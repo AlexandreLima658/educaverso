@@ -1,8 +1,8 @@
 package app.educaverso.course.service.core.modules
 
 import app.educaverso.commons.domain.entities.AggregateRoot
-import app.educaverso.commons.domain.value.objects.CourseId
-import app.educaverso.commons.domain.value.objects.ModuleId
+import app.educaverso.commons.domain.values.CourseId
+import app.educaverso.commons.domain.values.ModuleId
 import app.educaverso.course.service.core.modules.fields.ModuleName
 
 class Module(

@@ -9,16 +9,17 @@ class PublishCourseTest {
     @Test
     fun `should publish a course`() {
         // Given
-        var course = CreateCourse(
+        var (course, _) = CreateCourse(
             name = "Course name"
         ).execute()
 
 
         // When
-        course.execute(PublishCourse())
+        val event = course.execute(PublishCourse())
 
         // Then
         assertTrue(course.published)
+        assertTrue(event is CoursePublished)
 
     }
 
